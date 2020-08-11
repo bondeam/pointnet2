@@ -17,9 +17,9 @@ REGISTER_OP("ProbSample")
   .Output("out: int32")
   .SetShapeFn([](::tensorflow::shape_inference::InferenceContext* c) {
     ::tensorflow::shape_inference::ShapeHandle dims1; // batch_size * ncategory
-    c->WithRank(c->input(0), 2, &dims1);
+      TF_RETURN_IF_ERROR(c->WithRank(c->input(0), 2, &dims1));
     ::tensorflow::shape_inference::ShapeHandle dims2; // batch_size * npoints
-    c->WithRank(c->input(1), 2, &dims2);
+      TF_RETURN_IF_ERROR(c->WithRank(c->input(1), 2, &dims2));
     // batch_size * npoints
     ::tensorflow::shape_inference::ShapeHandle output = c->MakeShape({c->Dim(dims2, 0), c->Dim(dims2, 1)});
     c->set_output(0, output);
@@ -31,7 +31,7 @@ REGISTER_OP("FarthestPointSample")
   .Output("out: int32")
   .SetShapeFn([](::tensorflow::shape_inference::InferenceContext* c) {
     ::tensorflow::shape_inference::ShapeHandle dims1; // batch_size * npoint * 3
-    c->WithRank(c->input(0), 3, &dims1);
+      TF_RETURN_IF_ERROR(c->WithRank(c->input(0), 3, &dims1));
     int npoint;
     TF_RETURN_IF_ERROR(c->GetAttr("npoint", &npoint));
     ::tensorflow::shape_inference::ShapeHandle output = c->MakeShape({c->Dim(dims1, 0), npoint});
@@ -44,9 +44,9 @@ REGISTER_OP("GatherPoint")
   .Output("out: float32")
   .SetShapeFn([](::tensorflow::shape_inference::InferenceContext* c) {
     ::tensorflow::shape_inference::ShapeHandle dims1; // batch_size * ndataset * 3
-    c->WithRank(c->input(0), 3, &dims1);
+      TF_RETURN_IF_ERROR(c->WithRank(c->input(0), 3, &dims1));
     ::tensorflow::shape_inference::ShapeHandle dims2; // batch_size * npoints
-    c->WithRank(c->input(1), 2, &dims2);
+      TF_RETURN_IF_ERROR(c->WithRank(c->input(1), 2, &dims2));
     // batch_size * npoints * 3
     ::tensorflow::shape_inference::ShapeHandle output = c->MakeShape({c->Dim(dims1, 0), c->Dim(dims2, 1), c->Dim(dims1, 2)});
     c->set_output(0, output);

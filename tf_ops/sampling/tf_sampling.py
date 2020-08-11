@@ -3,8 +3,10 @@ Original author: Haoqiang Fan
 Modified by Charles R. Qi
 All Rights Reserved. 2017. 
 '''
-import tensorflow as tf
-from tensorflow.python.framework import ops
+#import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
+#from tensorflow.python.framework import ops
 import sys
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -19,7 +21,7 @@ returns:
     batch_size * npoints   int32
     '''
     return sampling_module.prob_sample(inp,inpr)
-ops.NoGradient('ProbSample')
+tf.NoGradient('ProbSample')
 # TF1.0 API requires set shape in C++
 #@tf.RegisterShape('ProbSample')
 #def _prob_sample_shape(op):
@@ -54,7 +56,7 @@ returns:
     batch_size * npoint         int32
     '''
     return sampling_module.farthest_point_sample(inp, npoint)
-ops.NoGradient('FarthestPointSample')
+tf.NoGradient('FarthestPointSample')
     
 
 if __name__=='__main__':
@@ -79,11 +81,11 @@ if __name__=='__main__':
         us=(uplusv+uminusv)*0.5
         vs=(uplusv-uminusv)*0.5
         pt_sample=tria_sample+(trib_sample-tria_sample)*tf.expand_dims(us,-1)+(tric_sample-tria_sample)*tf.expand_dims(vs,-1)
-        print 'pt_sample: ', pt_sample
+        print('pt_sample: ', pt_sample)
         reduced_sample=gather_point(pt_sample,farthest_point_sample(1024,pt_sample))
-        print reduced_sample
+        print(reduced_sample)
     with tf.Session('') as sess:
         ret=sess.run(reduced_sample)
-    print ret.shape,ret.dtype
+    print(ret.shape,ret.dtype)
     import cPickle as pickle
     pickle.dump(ret,open('1.pkl','wb'),-1)
