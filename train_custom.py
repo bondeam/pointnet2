@@ -119,7 +119,9 @@ NUM_CLASSES = 2
 data_dir = '/root/data'
 file = 'las_hashed'
 #datasplit_path = '/root/data/test/data_split.json'
-df, train_hashes, test_hashes, validation_hashes = las_dataset.load_data_memory(data_dir, file, hash_col, log)
+data_loc = os.path.join(data_dir, file)
+#datasplit_path = '/root/data/test/data_split.json'
+df, train_hashes, test_hashes, validation_hashes = las_dataset.load_data_memory(data_loc, hash_col, log.LOG_FOUT,save_dir=log.LOG_DIR)
 TRAIN_DATASET = las_dataset.Las_Dataset(df, train_hashes, num_point=NUM_POINT, \
                                         batch_size=BATCH_SIZE, shuffled=True, train=True, \
                                         data_channels=data_channels,N_AUGMENTATIONS=N_AUGMENTATIONS, \
