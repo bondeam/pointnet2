@@ -1,0 +1,20 @@
+Namespace(batch_size=12, decay_rate=0.7, decay_step=200000, gpu=0, grid_size=8, intensity=True, learning_rate=0.001, log_dir='log', max_epoch=1, model='pointnet2_cls_ssg_LAS', momentum=0.9, n_augmentations=1, num_point=32, optimizer='adam', return_info=True, rgb=False, trajectory=False, xyz=True, xyzonly=False)
+data location: /root/data/las_hashed00
+In files: 
+[PosixPath('/root/data/las_hashed00/part.0.parquet')]
+0: len:1171671
+            X       Y       Z  intensity  raw_classification  return_num  num_returns  hash08        XN        YN        ZN
+index                                                                                                                      
+0       7.338  23.450   6.620       87.0                 0.0           1            2       8 -0.437973  0.207855 -0.267005
+1       8.088  24.390   5.269       33.0                 0.0           1            2      11 -0.414111  0.237611 -0.279553
+2      10.858  30.989   9.980       51.0                 0.0           1            2      11 -0.325978  0.446499 -0.235798
+3      27.098  23.989  11.239       12.0                 0.0           1            2      13  0.190725  0.224917 -0.224105
+4      26.518  25.429  19.658       18.0                 0.0           1            4      15  0.172272  0.270500 -0.145912
+1:             X       Y       Z  intensity  raw_classification  return_num  num_returns  hash08        XN        YN        ZN
+index                                                                                                                      
+11      8.088  24.390   5.269       33.0                 0.0           1            2      11 -0.414111  0.237611 -0.279553
+11     10.858  30.989   9.980       51.0                 0.0           1            2      11 -0.325978  0.446499 -0.235798
+13     27.098  23.989  11.239       12.0                 0.0           1            2      13  0.190725  0.224917 -0.224105
+15     26.518  25.429  19.658       18.0                 0.0           1            4      15  0.172272  0.270500 -0.145912
+15     25.900  28.780  20.960       14.0                 0.0           1            4      15  0.152609  0.376574 -0.133819
+pid: 15678

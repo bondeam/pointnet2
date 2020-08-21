@@ -1,0 +1,148 @@
+Namespace(batch_size=12, decay_rate=0.7, decay_step=200000, gpu=0, grid_size=8, intensity=False, learning_rate=0.001, log_dir='log', max_epoch=1, model='pointnet2_cls_ssg_LAS', momentum=0.9, n_augmentations=5, num_point=32, optimizer='adam', return_info=False, rgb=False, trajectory=False, xyz=False, xyzonly=True)
+data location: /root/data/las_hashed00
+In files: 
+[PosixPath('/root/data/las_hashed00/part.0.parquet')]
+0: len:1171671
+            X       Y       Z  raw_classification  hash08
+index                                                    
+0       7.338  23.450   6.620                 0.0       8
+1       8.088  24.390   5.269                 0.0      11
+2      10.858  30.989   9.980                 0.0      11
+3      27.098  23.989  11.239                 0.0      13
+4      26.518  25.429  19.658                 0.0      15
+1: len:1168831
+            X       Y       Z  raw_classification  hash08
+index                                                    
+11      8.088  24.390   5.269                 0.0      11
+11     10.858  30.989   9.980                 0.0      11
+13     27.098  23.989  11.239                 0.0      13
+15     26.518  25.429  19.658                 0.0      15
+15     25.900  28.780  20.960                 0.0      15
+pid: 25800
+**** EPOCH 000 ****
+----
+2020-08-11 06:59:18.084667
+ ---- batch: 050 ----
+mean loss: 1.402187
+accuracy: 0.671667
+ ---- batch: 100 ----
+mean loss: 0.697534
+accuracy: 0.760000
+ ---- batch: 150 ----
+mean loss: 0.577458
+accuracy: 0.778333
+ ---- batch: 200 ----
+mean loss: 0.571259
+accuracy: 0.748333
+ ---- batch: 250 ----
+mean loss: 0.510935
+accuracy: 0.801667
+ ---- batch: 300 ----
+mean loss: 0.509377
+accuracy: 0.786667
+ ---- batch: 350 ----
+mean loss: 0.568116
+accuracy: 0.756667
+ ---- batch: 400 ----
+mean loss: 0.525742
+accuracy: 0.771667
+ ---- batch: 450 ----
+mean loss: 0.509082
+accuracy: 0.795000
+ ---- batch: 500 ----
+mean loss: 0.467801
+accuracy: 0.823333
+ ---- batch: 550 ----
+mean loss: 0.475906
+accuracy: 0.803333
+ ---- batch: 600 ----
+mean loss: 0.452688
+accuracy: 0.825000
+ ---- batch: 650 ----
+mean loss: 0.506138
+accuracy: 0.805000
+ ---- batch: 700 ----
+mean loss: 0.435470
+accuracy: 0.818333
+ ---- batch: 750 ----
+mean loss: 0.482765
+accuracy: 0.806667
+ ---- batch: 800 ----
+mean loss: 0.403958
+accuracy: 0.838333
+ ---- batch: 850 ----
+mean loss: 0.430813
+accuracy: 0.808333
+ ---- batch: 900 ----
+mean loss: 0.406924
+accuracy: 0.830000
+ ---- batch: 950 ----
+mean loss: 0.381877
+accuracy: 0.855000
+ ---- batch: 1000 ----
+mean loss: 0.415046
+accuracy: 0.830000
+ ---- batch: 1050 ----
+mean loss: 0.411906
+accuracy: 0.851667
+ ---- batch: 1100 ----
+mean loss: 0.459097
+accuracy: 0.815000
+ ---- batch: 1150 ----
+mean loss: 0.451749
+accuracy: 0.795000
+ ---- batch: 1200 ----
+mean loss: 0.452904
+accuracy: 0.813333
+ ---- batch: 1250 ----
+mean loss: 0.416909
+accuracy: 0.828333
+ ---- batch: 1300 ----
+mean loss: 0.416281
+accuracy: 0.841667
+ ---- batch: 1350 ----
+mean loss: 0.433899
+accuracy: 0.833333
+ ---- batch: 1400 ----
+mean loss: 0.362407
+accuracy: 0.875000
+ ---- batch: 1450 ----
+mean loss: 0.356061
+accuracy: 0.853333
+ ---- batch: 1500 ----
+mean loss: 0.406903
+accuracy: 0.840000
+ ---- batch: 1550 ----
+mean loss: 0.354336
+accuracy: 0.873333
+ ---- batch: 1600 ----
+mean loss: 0.390809
+accuracy: 0.848333
+ ---- batch: 1650 ----
+mean loss: 0.458392
+accuracy: 0.816667
+2020-08-11 07:01:44.749263
+---- EPOCH 000 EVALUATION ----
+eval mean loss: 1489.087771
+eval accuracy: 0.127762
+eval avg class acc: 0.500000
++-----------++-------+--------+
+|           ||     0 |      1 |
++===========++=======+========+
+|   Correct ||     0 |    532 |
++-----------++-------+--------+
+|      Seen ||  3632 |    532 |
++-----------++-------+--------+
+| Precision ||   nan | 12.78% |
++-----------++-------+--------+
+|    Recall || 0.00% |   1.00 |
++-----------++-------+--------+
+
+      0      1  
+    ++===+======+
+  0 || 0 | 3632 |
+    ++---+------+
+  1 || 0 |  532 |
+    ++---+------+
+Model saved in file: log/20200811_grid08_point032_epoch001_xyzonly/model.ckpt
+---- run time: 0 hours, 3 minutes, 7 seconds ----

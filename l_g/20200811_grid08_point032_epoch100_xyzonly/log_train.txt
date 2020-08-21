@@ -1,0 +1,53 @@
+Namespace(batch_size=64, decay_rate=0.7, decay_step=200000, gpu=0, grid_size=8, intensity=False, learning_rate=0.001, log_dir='log', max_epoch=100, model='pointnet2_cls_ssg_LAS', momentum=0.9, n_augmentations=1, num_point=32, optimizer='adam', return_info=False, rgb=False, trajectory=False, xyz=False, xyzonly=True)
+data location: /root/data/las_hashed
+In files: 
+[PosixPath('/root/data/las_hashed/part.2.parquet'), PosixPath('/root/data/las_hashed/part.25.parquet'), PosixPath('/root/data/las_hashed/part.34.parquet'), PosixPath('/root/data/las_hashed/part.3.parquet'), PosixPath('/root/data/las_hashed/part.24.parquet'), PosixPath('/root/data/las_hashed/part.19.parquet'), PosixPath('/root/data/las_hashed/part.8.parquet'), PosixPath('/root/data/las_hashed/part.26.parquet'), PosixPath('/root/data/las_hashed/part.27.parquet'), PosixPath('/root/data/las_hashed/part.33.parquet'), PosixPath('/root/data/las_hashed/part.28.parquet'), PosixPath('/root/data/las_hashed/part.36.parquet'), PosixPath('/root/data/las_hashed/part.4.parquet'), PosixPath('/root/data/las_hashed/part.39.parquet'), PosixPath('/root/data/las_hashed/part.20.parquet'), PosixPath('/root/data/las_hashed/part.30.parquet'), PosixPath('/root/data/las_hashed/part.29.parquet'), PosixPath('/root/data/las_hashed/part.12.parquet'), PosixPath('/root/data/las_hashed/part.31.parquet'), PosixPath('/root/data/las_hashed/part.6.parquet'), PosixPath('/root/data/las_hashed/part.7.parquet'), PosixPath('/root/data/las_hashed/part.18.parquet'), PosixPath('/root/data/las_hashed/part.14.parquet'), PosixPath('/root/data/las_hashed/part.22.parquet'), PosixPath('/root/data/las_hashed/part.0.parquet'), PosixPath('/root/data/las_hashed/part.15.parquet'), PosixPath('/root/data/las_hashed/part.11.parquet'), PosixPath('/root/data/las_hashed/part.10.parquet'), PosixPath('/root/data/las_hashed/part.9.parquet'), PosixPath('/root/data/las_hashed/part.16.parquet'), PosixPath('/root/data/las_hashed/part.5.parquet'), PosixPath('/root/data/las_hashed/part.21.parquet'), PosixPath('/root/data/las_hashed/part.23.parquet'), PosixPath('/root/data/las_hashed/part.17.parquet'), PosixPath('/root/data/las_hashed/part.13.parquet'), PosixPath('/root/data/las_hashed/part.38.parquet'), PosixPath('/root/data/las_hashed/part.32.parquet'), PosixPath('/root/data/las_hashed/part.35.parquet'), PosixPath('/root/data/las_hashed/part.1.parquet'), PosixPath('/root/data/las_hashed/part.37.parquet')]
+0: len:195292648
+                           X        Y        Z  raw_classification  hash08
+__null_dask_index__                                                       
+0                    164.998   58.098    8.399                 1.0     314
+0                     35.699   28.098  340.099                 1.0      26
+0                     35.799  441.600   85.600                 1.0    2618
+0                    321.699  179.299  209.100                 1.0    1640
+0                    342.898   64.399  192.199                 1.0    1220
+1: len:184183568
+             X        Y        Z  raw_classification  hash08
+index                                                       
+380    245.799   54.600  188.399                 1.0     380
+380    247.299   48.100  270.899                 1.0     380
+82      97.199   14.200  110.700                 1.0      82
+419    142.699  107.699  285.800                 1.0     419
+82     102.898    9.800  223.100                 1.0      82
+pid: 31236
+**** EPOCH 000 ****
+----
+2020-08-11 08:34:41.838026
+Train mean loss: 0.615850
+Train accuracy: 0.715104
+2020-08-13 10:57:49.067436
+---- EPOCH 000 EVALUATION ----
+eval mean loss: 2987977.208045
+eval accuracy: 0.223736
+eval avg class acc: 0.500000
++-----------++--------+--------+
+|           ||      0 |      1 |
++===========++========+========+
+|   Correct ||      0 |  84812 |
++-----------++--------+--------+
+|      Seen || 294260 |  84812 |
++-----------++--------+--------+
+| Precision ||    nan | 22.37% |
++-----------++--------+--------+
+|    Recall ||  0.00% |   1.00 |
++-----------++--------+--------+
+
+      0        1  
+    ++===+========+
+  0 || 0 | 294260 |
+    ++---+--------+
+  1 || 0 |  84812 |
+    ++---+--------+
+Model saved in file: log/20200811_grid08_point032_epoch100_xyzonly/model.ckpt
+**** EPOCH 001 ****
+----
+2020-08-14 21:55:58.818815
